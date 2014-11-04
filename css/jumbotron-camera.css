@@ -1,0 +1,101 @@
+body {
+  background-color: #222222;
+}
+.bezel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  border: 20px solid #333333;
+  -webkit-background-clip: content-box;
+  -moz-background-clip: content-box;
+  background-clip: content-box;
+  padding: 4px;
+  box-shadow: inset 0 2px #000000, inset -2px 0 #4d4d4d, inset 0 -2px #666666, inset 2px 0 #4d4d4d;
+}
+#videos {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#videos video {
+  display: block;
+  float: left;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.connected #init-camera,
+.disconnected #end-call {
+  display: none;
+}
+.connected #end-call,
+.disconnected #init-camera {
+  display: inline;
+}
+.indicators {
+  font-size: 21px;
+  position: absolute;
+  color: white;
+  text-shadow: 0 0 2px black, 0 0 2px black;
+  font-family: 'Share Tech Mono', Menlo, Monaco, Consolas, "Courier New", monospace;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+}
+.indicators > span {
+  display: none;
+  padding-right: 10px;
+}
+.indicator {
+  white-space: nowrap;
+}
+.indicator-server-false {
+  color: red;
+  -webkit-animation: blink 1.5s linear 0s infinite normal none;
+  -moz-animation: blink 1.5s linear 0s infinite normal none;
+  animation: blink 1.5s linear 0s infinite normal none;
+}
+.indicator-media-false {
+  color: red;
+  -webkit-animation: blink 1.5s linear 0s infinite normal none;
+  -moz-animation: blink 1.5s linear 0s infinite normal none;
+  animation: blink 1.5s linear 0s infinite normal none;
+}
+.indicator-p2p-connecting {
+  color: yellow;
+  -webkit-animation: blink 0.5s linear 0s infinite normal none;
+  -moz-animation: blink 0.5s linear 0s infinite normal none;
+  animation: blink 0.5s linear 0s infinite normal none;
+}
+.indicator-p2p-disconnected {
+  color: red;
+  -webkit-animation: blink 1.5s linear 0s infinite normal none;
+  -moz-animation: blink 1.5s linear 0s infinite normal none;
+  animation: blink 1.5s linear 0s infinite normal none;
+}
+.status-media-false .indicator-media-false,
+.status-media-true .indicator-media-true,
+.status-server-false .indicator-server-false,
+.status-server-true .indicator-server-true,
+.status-p2p-connected .indicator-p2p-connected,
+.status-p2p-connecting .indicator-p2p-connecting,
+.status-p2p-disconnected .indicator-p2p-disconnected {
+  display: inline;
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

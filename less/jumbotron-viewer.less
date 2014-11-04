@@ -1,0 +1,155 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+@color-accent: #00AD8F;
+
+body {
+    background-color: #072c29;
+}
+
+.bezel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    border: 50px solid @gray-dark;
+    background: #000 url(../images/display.png) repeat repeat;
+    -webkit-background-clip: content-box;
+    -moz-background-clip: content-box;
+    background-clip: content-box;
+    padding: 10px;
+    box-shadow: inset 0 1px darken(@gray-dark, 20%), inset -1px 0 lighten(@gray-dark, 10%), inset 0 -1px lighten(@gray-dark, 20%), inset 1px 0 lighten(@gray-dark, 10%);
+}
+
+#videos {
+    width: 100%;
+    height: 100%;
+    video {
+        display: block;
+        float: left;
+        cursor: pointer;
+    }
+}
+
+#monitorContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 200;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s linear 0s;
+    -moz-transition: opacity 0.2s linear 0s;
+    transition: opacity 0.2s linear 0s;
+    display: none;
+    #monitorWrapper {
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        width: 80%;
+        height: 80%;
+        #monitorVideo {
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background-color: black;
+            display: block;
+        }
+        #monitorAudio {
+            width: 0;
+            height: 0;
+        }
+    }
+}
+
+.monitored {
+    #monitorContainer {
+        opacity: 1;
+        #monitorWrapper {
+            #monitor {
+            }
+        }
+    }
+}
+
+#logo {
+    position: absolute;
+    left: 0;
+    bottom: (-50px + 28px * (@line-height-base - 1) / 2);
+    width: 100%;
+    font-size: 28px;
+    z-index: 100;
+    text-align: center;
+    color: @color-accent;
+    font-family: 'Josefin Slab', @font-family-monospace;
+}
+
+#countWrapper {
+    position: absolute;
+    right: (10px + 28px * (@line-height-base - 1) / 2);
+    bottom: 10px;
+    font-size: 28px;
+    z-index: 100;
+    text-align: right;
+    color: white;
+    font-family: 'Share Tech Mono', @font-family-monospace;
+    text-shadow: 0 0 2px black, 0 0 2px black;
+}
+
+#url {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    font-size: 42px;
+    z-index: 100;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 2px black;
+    font-family: 'Share Tech Mono', @font-family-monospace;
+}
+
+@max-video: 256;
+
+.video-size (@count-video) {
+    width: (100% / ceil(sqrt(@count-video)));
+}
+.video-size (@count-video) when (@count-video <= (ceil(sqrt(@count-video)) * (ceil(sqrt(@count-video)) - 1))) {
+    height: (100% / (ceil(sqrt(@count-video)) - 1));
+}
+.video-size (@count-video) when (@count-video > (ceil(sqrt(@count-video)) * (ceil(sqrt(@count-video)) - 1))) {
+    height: (100% / ceil(sqrt(@count-video)));
+}
+
+.generate-video-size(@max-video: 100, @count-video: 1) when (@count-video <= @max-video) {
+    .stream-@{count-video} & {
+        .video-size(@count-video);
+    }
+    .generate-video-size(@max-video, (@count-video + 1));
+}
+
+video {
+    .generate-video-size(@max-video);
+    .stream-many & {
+        .video-size(@max-video);
+    }
+}
+
+#buttons {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+button {
+    font-size: 24px;
+}

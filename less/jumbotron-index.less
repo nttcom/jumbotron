@@ -1,0 +1,230 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+@color-main: @gray-darker;
+@color-accent: #00AD8F;
+@color-accent-dark: #89ADA7;
+@color-accent-2: #FFBFE2;
+@color-border: #ccc;
+
+@width-iphone5s: (640px / 2);
+@height-iphone5s: (1136px / 2);
+
+@screenshot-pc-width: 1365px;
+@screenshot-pc-height: 1153px;
+@screenshot-pc-ratio: (@screenshot-pc-width / @screenshot-pc-height);
+@screenshot-mobile-width: 1096px;
+@screenshot-mobile-height: 546px;
+@screenshot-mobile-ratio: (@screenshot-mobile-width / @screenshot-mobile-height);
+@screenshot-pc-col: 7;
+@screenshot-mobile-col: 5;
+
+.screenshot-mobile-margin(@container-width) {
+    @pc-col-width: (@container-width * @screenshot-pc-col / @grid-columns - @grid-gutter-width);
+    @mobile-col-width: (@container-width * @screenshot-mobile-col / @grid-columns - @grid-gutter-width);
+    @mobile-image-margin: ((@pc-col-width / @screenshot-pc-ratio - @mobile-col-width / @screenshot-mobile-ratio * 2) / 3);
+    margin-top: @mobile-image-margin;
+    margin-bottom: 0;
+    + img {
+        margin-bottom: @mobile-image-margin;
+    }
+}
+
+.btn-accent {
+    .button-variant(@body-bg; @color-accent; @color-border);
+}
+
+.btn-accent-dark {
+    .button-variant(@body-bg; @color-accent-dark; @color-border);
+}
+
+.btn-skeleton {
+    .button-variant(@body-bg; transparent; @color-border);
+    box-shadow: 0 0 2px #000, inset 0 0 2px #000;
+}
+
+.jumbotron {
+    background-size: cover;
+    background-position: left top;
+
+    background-image: url(../images/3599160345_498518463b_o.1536x1024.mq.jpg);
+    @media (min-width: @screen-sm-min) {
+        background-image: url(../images/3599160345_498518463b_o.1920x1280.mq.jpg);
+    }
+
+    > .container-fluid {
+        position: relative;
+
+        height: (@width-iphone5s * 0.75 - @jumbotron-padding * 2);   // 320px is the screen width of iPhone 5s
+        @media (min-width: @height-iphone5s) {
+            height: (@height-iphone5s * 0.75 - @jumbotron-padding * 2);
+        }
+        @media (min-width: @screen-sm-min) {
+            height: (@screen-sm-min * 0.6 - @jumbotron-padding * 1.6 * 2);
+        }
+        @media (min-width: @screen-md-min) {
+            height: (@screen-md-min * 0.6 - @jumbotron-padding * 1.6 * 2);
+        }
+        @media (min-width: @screen-lg-min) {
+            height: (@screen-lg-min * 0.6 - @jumbotron-padding * 1.6 * 2);
+        }
+
+        > h1 {
+            text-align: right;
+            color: @body-bg;
+            text-shadow: 0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000;
+            font-family: 'Josefin Slab', @font-family-base;
+
+            margin-top: (-@jumbotron-padding * 0.125);
+            @media (min-width: @screen-sm-min) {
+                margin-top: (-@jumbotron-padding * 0.2);
+            }
+        }
+
+        > .tag-line {
+            text-align: right;
+            color: @body-bg;
+            text-shadow: 0 0 2px #000, 0 0 2px #000;
+            font-size: @font-size-base;
+            @media screen and (min-width: @screen-sm-min) {
+                font-size: @jumbotron-font-size;
+            }
+        }
+
+        > .language {
+            text-align: right;
+            color: @body-bg;
+            font-size: @font-size-base;
+            text-shadow: 0 0 2px #000, 0 0 2px #000;
+            > a,
+            > a:hover,
+            > a:active {
+                color: @body-bg;
+            }
+        }
+
+        > .credit {
+            position: absolute;
+            right: (@grid-gutter-width / 2);
+
+            bottom: (-@jumbotron-padding * 0.5);
+            @media (min-width: @screen-sm-min) {
+                bottom: (-@jumbotron-padding * 0.8);
+            }
+
+            margin-bottom: 0;
+            font-size: @font-size-base;
+            color: @gray-lighter;
+            text-shadow: 0 0 2px #000, 0 0 2px #000;
+            > a,
+            > a:hover,
+            > a:active {
+                color: @gray-lighter;
+            }
+        }
+    }
+}
+
+.page-header {
+    border-bottom: 1px solid #ccc;
+
+    > h2 {
+        font-family: 'Josefin Slab', @font-family-base;
+    }
+}
+
+.section-about {
+    .screenshot {
+        text-align: center;
+        > img {
+            .img-responsive();
+            display: inline-block;
+        }
+    }
+    .screenshot-mobile {
+        margin-top: 40px;
+        & > img {
+            margin-bottom: 20px;
+        }
+        @media (min-width: @screen-sm-min) {
+            margin-top: 0;
+            & > img {
+                .screenshot-mobile-margin(@container-sm);
+            }
+        }
+        @media (min-width: @screen-md-min) {
+            & > img {
+                .screenshot-mobile-margin(@container-md);
+            }
+        }
+        @media (min-width: @screen-lg-min) {
+            & > img {
+                .screenshot-mobile-margin(@container-lg);
+            }
+        }
+    }
+}
+
+.section-try {
+    .form-wrapper {
+        text-align: center;
+        input {
+            text-align: center;
+            font-family: @font-family-monospace;
+        }
+    }
+}
+
+.section-other-apps {
+    a.thumbnail:hover {
+        text-decoration: none;
+    }
+}
+
+footer {
+    margin-top: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: @gray-darker;
+    color: #ddd;
+    a,
+    a:hover,
+    a:active {
+        color: #ddd;
+    }
+
+    > .container {
+        > .footer-links {
+            margin: 40px 0;
+            padding-left: 0;
+            list-style: none;
+            text-align: center;
+
+            > li {
+                display: inline;
+                padding: 0 2px;
+            }
+        }
+
+        > p {
+            margin: 40px 0;
+            text-align: center;
+            clear: both;
+        }
+
+        > .logos {
+            text-align: center;
+
+            a {
+                display: block;
+                margin: 20px 0 0 0;
+                @media (min-width: @screen-sm-min) {
+                    display: inline-block;
+                    + a {
+                        margin: 0 0 0 40px;
+                    }
+                }
+            }
+        }
+    }
+}

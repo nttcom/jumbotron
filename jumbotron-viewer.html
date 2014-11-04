@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Viewer - HTML5 JUMBOTRON</title>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:600" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="css/jumbotron-common.css">
+    <link rel="stylesheet" href="css/jumbotron-viewer.css">
+    <script src="https://skyway.io/dist/0.3/peer.js"></script>
+</head>
+<body>
+<div class="bezel">
+    <div id="videos"></div>
+    <div id="monitorContainer">
+        <div id="monitorWrapper">
+            <video id="monitorVideo" muted="muted" autoplay="autoplay"></video>
+            <audio id="monitorAudio" autoplay="autoplay"></audio>
+        </div>
+    </div>
+    <div id="logo">HTML5 JUMBOTRON</div>
+    <div id="countWrapper"><span id="count">0</span> connections</div>
+    <div id="url"></div>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jumbotron-common.js"></script>
+<script src="js/jumbotron-viewer.js"></script>
+</body>
+</html>

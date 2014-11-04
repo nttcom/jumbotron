@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="status-p2p-disconnected status-server-false status-media-false">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Camera - HTML5 JUMBOTRON</title>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:600" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jumbotron-common.css">
+    <link rel="stylesheet" href="css/jumbotron-camera.css">
+    <script src="https://skyway.io/dist/0.3/peer.js"></script>
+</head>
+<body>
+<div class="bezel">
+    <div id="videos">
+        <video id="video" muted="muted" autoplay="autoplay"></video>
+    </div>
+    <div class="indicators">
+        <span class="indicator indicator-server indicator-server-true">
+            <span class="glyphicon glyphicon-signal"></span>
+            Online&nbsp;
+        </span>
+        <span class="indicator indicator-server indicator-server-false">
+            <span class="glyphicon glyphicon-signal"></span>
+            Offline
+        </span>
+        <span class="indicator indicator-media indicator-media-true">
+            <span class="glyphicon glyphicon-facetime-video"></span>
+            Ready
+        </span>
+        <span class="indicator indicator-media indicator-media-false">
+            <span class="glyphicon glyphicon-facetime-video"></span>
+            Off&nbsp;&nbsp;
+        </span>
+        <span class="indicator indicator-p2p indicator-p2p-connected">
+            <span class="glyphicon glyphicon-transfer"></span>
+            Connected to JUMBOTRON&nbsp;&nbsp;&nbsp;
+        </span>
+        <span class="indicator indicator-p2p indicator-p2p-connecting">
+            <span class="glyphicon glyphicon-transfer"></span>
+            Connecting to JUMBOTRON&nbsp;&nbsp;
+        </span>
+        <span class="indicator indicator-p2p indicator-p2p-disconnected">
+            <span class="glyphicon glyphicon-transfer"></span>
+            Disconnected to JUMBOTRON
+        </span>
+    </div>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jumbotron-common.js"></script>
+<script src="js/jumbotron-camera.js"></script>
+</body>
+</html>
