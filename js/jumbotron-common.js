@@ -15,5 +15,5 @@ var LICENSE_KEY = '5528079a-63d8-11e4-b3d7-530ce53754b0';
 
 // URLs
 var URL_SCHEME = 'http://';
-var URL_HOST = 'bit.ly';
+var URL_HOST = 'is.gd';
 var URL_PATH = '/html5jt';
