@@ -313,3 +313,13 @@ footer > .container > .logos a {
     margin: 0 0 0 40px;
   }
 }
+#organizer {
+  font-size: large;
+  font-style: italic;
+  text-decoration: underline;
+}
+#participant {
+  font-size: large;
+  font-style: italic;
+  text-decoration: underline;
+}
