@@ -47,18 +47,19 @@
     <div class="page-header">
         <h2>今すぐ使ってみる</h2>
     </div>
-        <!--
-        <div class="row">
-            <div class="col-xs-4 col-xs-offset-2"><h2>スクリーン</h2></div>
-            <div class="col-xs-4 col-xs-offset-2"><h2>参加者</h2></div>
-        </div>
-        -->
+    <!--
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"><h2>スクリーン</h2></div>
+        <div class="col-xs-4 col-xs-offset-2"><h2>参加者</h2></div>
+    </div>
+    -->
 
     <div class="row">
         <div class="col-sm-12 form-wrapper form-inline">
             <p>
+                まず、
                 <span class="form-group">
-                    <label for="channel">まず、チャンネル</label>
+                    <label for="channel">チャンネル</label>
                     <span class="input-group input-group-lg">
                         <input type="text" maxlength="4" class="form-control" id="channel" size="6">
                         <span class="input-group-btn">
@@ -75,15 +76,19 @@
         <div class="col-sm-offset-2 col-sm-4 col-md-offset-3 col-md-3 form-wrapper">
             <div class="form-group">
                 <h5>イベント<span id="organizer">主催者</span> は</h5>
-                <a href="jumbotron-viewer.html" id="startDispUrl" target="_blank" role="button" class="btn btn-accent btn-block btn-lg">ビューワを起動</a>
-                <h5>し、スクリーンに表示しましょう。</h5>
+                <p>
+                    <a href="jumbotron-viewer.html" id="startDispUrl" target="_blank" role="button" class="btn btn-accent btn-block btn-lg">ビューワを起動</a>
+                    し、スクリーンに表示しましょう。
+                </p>
             </div>
         </div>
         <div class="col-sm-4 col-md-3 form-wrapper">
             <div class="form-group">
                 <h5>イベント<span id="participant">参加者</span> は</h5>
-                <a href="jumbotron-camera.html" id="startCamUrl" target="_blank" role="button" class="btn btn-accent btn-block btn-lg">カメラを起動</a>
-                <h5>し、自分の顔をスクリーンに映しましょう。</h5>
+                <p>
+                    <a href="jumbotron-camera.html" id="startCamUrl" target="_blank" role="button" class="btn btn-accent btn-block btn-lg">カメラを起動</a>
+                    し、顔をスクリーンに映しましょう。
+                </p>
             </div>
         </div>
     </div>
@@ -91,19 +96,16 @@
     <div class="row">
         <div class="col-sm-offset-3 col-sm-8 col-md-7 form-wrapper form-inline">
             <p>
-            <h5>
                 <span class="form-group">
                     <label for="cameraUrl">カメラのアドレス</label>
                     <input type="text" class="form-control zclip" id="cameraUrl" size="20"  data-container="body" data-toggle="popover" data-placement="right" data-content="コピーしました。" readonly>
-                    をコピーできます。
                 </span>
-            </h5>
+                をコピーできます。
             </p>
 
             <p>
-            <h5>
-                <a class="btn btn-accent btn-md" id="emailLinkButtonJP" target="_blank" href="">カメラのアドレスをメールでシェア</a>できます。
-            </h5>
+                <a class="btn btn-accent btn-md" id="emailLinkButtonJP" target="_blank" href="">カメラのアドレスをメールでシェア</a>
+                できます。
             </p>
         </div>
     </div>
