@@ -45,6 +45,13 @@ $(document).on('ready', function(){
         if (event.target.id === 'monitorVideo') {
             $('html').removeClass('monitored');
             $monitorVideo.removeAttr('src');
+
+            $monitorVideo.get(0).muted = true;
+            $monitorVideo.get(0).volume = 0.0;
+
+            console.log("Video is now muted: " + $monitorVideo.get(0).muted);
+            console.log("Video volume is now: " + $monitorVideo.get(0).volume);
+
             setTimeout(function() {
                 $('#monitorContainer').hide();
             }, 210);
@@ -53,7 +60,13 @@ $(document).on('ready', function(){
         $('#monitorContainer').show();
         setTimeout(function() {
             $('html').addClass('monitored');
+            $monitorVideo.get(0).muted = false;
+            $monitorVideo.get(0).volume = 1.0;
+
+            console.log("Video is now muted: " + $monitorVideo.get(0).muted);
+            console.log("Video volume is now: " + $monitorVideo.get(0).volume);
         }, 0);
+
         var remoteId = $(this).attr('id');
         console.log('jumbotron-viewer.js: remote ID is ' + remoteId);
         var remoteStream = existingCalls[remoteId].remoteStream;
