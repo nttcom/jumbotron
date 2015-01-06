@@ -4,7 +4,7 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia 
 console.log('start getUserMedia.');
 navigator.getUserMedia({
     video: true,
-    audio: false
+    audio: true
 }, function(localStream){
     console.log('complete getUserMedia.');
     $('html')

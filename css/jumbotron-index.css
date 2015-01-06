@@ -1,6 +1,6 @@
 .btn-accent {
   color: #ffffff;
-  background-color: #00ad8f;
+  background-color: #5c85ff;
   border-color: #cccccc;
 }
 .btn-accent:hover,
@@ -9,7 +9,7 @@
 .btn-accent.active,
 .open > .dropdown-toggle.btn-accent {
   color: #ffffff;
-  background-color: #007a65;
+  background-color: #295fff;
   border-color: #adadad;
 }
 .btn-accent:active,
@@ -32,16 +32,16 @@ fieldset[disabled] .btn-accent:active,
 .btn-accent.disabled.active,
 .btn-accent[disabled].active,
 fieldset[disabled] .btn-accent.active {
-  background-color: #00ad8f;
+  background-color: #5c85ff;
   border-color: #cccccc;
 }
 .btn-accent .badge {
-  color: #00ad8f;
+  color: #5c85ff;
   background-color: #ffffff;
 }
 .btn-accent-dark {
   color: #ffffff;
-  background-color: #89ada7;
+  background-color: #7d9dff;
   border-color: #cccccc;
 }
 .btn-accent-dark:hover,
@@ -50,7 +50,7 @@ fieldset[disabled] .btn-accent.active {
 .btn-accent-dark.active,
 .open > .dropdown-toggle.btn-accent-dark {
   color: #ffffff;
-  background-color: #6b9891;
+  background-color: #4a77ff;
   border-color: #adadad;
 }
 .btn-accent-dark:active,
@@ -73,11 +73,11 @@ fieldset[disabled] .btn-accent-dark:active,
 .btn-accent-dark.disabled.active,
 .btn-accent-dark[disabled].active,
 fieldset[disabled] .btn-accent-dark.active {
-  background-color: #89ada7;
+  background-color: #7d9dff;
   border-color: #cccccc;
 }
 .btn-accent-dark .badge {
-  color: #89ada7;
+  color: #7d9dff;
   background-color: #ffffff;
 }
 .btn-skeleton {
@@ -312,4 +312,14 @@ footer > .container > .logos a {
   footer > .container > .logos a + a {
     margin: 0 0 0 40px;
   }
+}
+#organizer {
+  font-size: large;
+  font-style: italic;
+  text-decoration: underline;
+}
+#participant {
+  font-size: large;
+  font-style: italic;
+  text-decoration: underline;
 }

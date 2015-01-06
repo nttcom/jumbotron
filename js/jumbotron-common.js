@@ -7,7 +7,7 @@
  */
 var VIEWER_ID = 'viewer' + location.hash.replace(/^#/, '');
 
-// SkyWay (localhost, app.html5experts.jp)
+// SkyWay (jt.skyway.io)
 var LICENSE_KEY = '5528079a-63d8-11e4-b3d7-530ce53754b0';
 
 // SkyWay (localhost)
