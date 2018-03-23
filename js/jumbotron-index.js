@@ -1,7 +1,3 @@
-/**
- * Created by Pan on 7th October 2014.
- */
-
 /* URLs */
 var URL_CAMERA = 'jumbotron-camera.html';
 var URL_VIEWER = 'jumbotron-viewer.html';
@@ -72,37 +68,9 @@ function preventExceptNumber(event) {
     }
 }
 
-function prepareClipboard() {
-    $('#cameraUrl').on('copy', function(/* ClipboardEvent */ e) {
-        var textToCopy = URL_SCHEME + $('#cameraUrl').val();
-
-        if (!textToCopy) {
-            return;
-        }
-        e.clipboardData.clearData();
-        e.clipboardData.setData('text/plain', textToCopy);
-        //e.clipboardData.setData('text/html', '<b>' + textToCopy + '</b>');
-        //e.clipboardData.setData('application/rtf', '{\\rtf1\\ansi\n{\\b ' + textToCopy + '}}');
-        e.preventDefault();
-    });
-}
-
-function preparePopover() {
-    $('#cameraUrl').popover({
-        trigger: 'aftercopy',
-        delay: {
-            show: 0,
-            hide: 1000
-        }
-    });
-}
-
 $(document).on('ready', function() {
     genChannel();
-    prepareClipboard();
-    preparePopover();
 });
-$('#numGen').on('click', genChannel);
 $('#channel')
     .on('keydown', preventExceptNumber)
     .on('keyup', updateURLs)
