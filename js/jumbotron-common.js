@@ -1,10 +1,7 @@
 var VIEWER_ID = 'viewer' + location.hash.replace(/^#/, '');
 
 // SkyWay (jt.skyway.io)
-var LICENSE_KEY = 'c2d8c99f-4902-445b-8ee1-76c8294249e1';
-
-// SkyWay (localhost)
-//var LICENSE_KEY = '6165842a-5c0d-11e3-b514-75d3313b9d05';
+var LICENSE_KEY = 'bf09a433-41d9-4e2b-9229-cb711a8a7306';
 
 // URLs
 var URL_SCHEME = 'http://';
